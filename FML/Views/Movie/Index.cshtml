@@ -1,0 +1,82 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+@using static FML.Controllers.MovieController;
+@using static FML.Models.Movie;
+@model List<Movie>
+
+<h1 style="text-align:center;font-style:italic;color:orangered">Movie`s</h1>
+
+
+<br />
+<br />
+
+@{
+    int i = 0;
+}
+
+<style>
+    th{
+        color:orange;
+    }
+    td{
+        color:white;
+    }
+    a{
+        color:white;
+    }
+    span{
+        font-size:30px;
+        color:red;
+    }
+</style>
+
+<table class="table">
+            <thead>
+                <tr>
+                    <th>Movie Name</th>
+                    <th>Movie Director</th>
+                    <th>Movie Year</th>
+                    <th>Movie Description</th>
+                    <th>Remove</th>
+                    <th>Update</th>
+
+                </tr>
+            </thead>
+    @foreach (var item in Model)
+    {
+            <tbody>
+                <tr>
+                    <td>@item.MovieName</td>
+                    <td>@item.MovieDirector</td>
+                    <td>@item.MovieYear</td>
+                    <td>@item.MovieDescription</td>
+                <td><a asp-controller="Movie" asp-action="Remove" asp-route-id="@item.id">Remow Movie</a></td>
+
+
+                <td><a asp-controller="Movie" asp-action="Update" asp-route-id="@item.id">Update Movie</a></td>
+
+                @{
+                    i++;
+                }
+
+                </tr>
+            </tbody>
+        }
+
+
+
+        </table>
+   
+
+<div class="funct">
+
+    <a href="/Movie/Add">Add New Movie</a>
+    <br />
+    <span style="text-align:right">Number of movies: @i</span>
+
+</div>
+
+

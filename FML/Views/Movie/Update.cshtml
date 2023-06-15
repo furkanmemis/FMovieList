@@ -1,0 +1,28 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+<h1 style="text-align:center">Update Page`s </h1>
+
+@model Movie;
+
+<form asp-controller="Movie" asp-action="Update" method="post">
+
+    <input type="hidden" asp-for="id"/>
+
+    <label>Movie Name</label>
+    <input type="text" asp-for=MovieName/>
+
+    <label>Movie Director</label>
+    <input type="text" asp-for="MovieDirector"/>
+
+    <label>Movie Year</label>
+    <input type="text" asp-for="MovieYear"/>
+
+    <label>Moviye Description</label>
+    <input type="text" asp-for="MovieDescription"/>
+
+    <button type="submit">Save Movie</button>
+ 
+</form>
