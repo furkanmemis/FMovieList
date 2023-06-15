@@ -3,25 +3,38 @@
 *@
 @{
 }
-<h1 style="text-align:center">Update Page`s </h1>
 
 @model Movie;
 
-<form asp-controller="Movie" asp-action="Update" method="post">
+<form asp-controller="Movie" asp-action="Update" method="post" style="text-align:center">
 
     <input type="hidden" asp-for="id"/>
 
     <label>Movie Name</label>
+    <br />
     <input type="text" asp-for=MovieName/>
+    <br />
 
     <label>Movie Director</label>
+    <br />
+
     <input type="text" asp-for="MovieDirector"/>
+    <br />
 
     <label>Movie Year</label>
+    <br />
+
     <input type="text" asp-for="MovieYear"/>
+    <br />
+
 
     <label>Moviye Description</label>
+    <br />
+
     <input type="text" asp-for="MovieDescription"/>
+    <br />
+
+    <br />
 
     <button type="submit">Save Movie</button>
  
